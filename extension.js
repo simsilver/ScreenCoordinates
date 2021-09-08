@@ -28,7 +28,9 @@ const CoordManager = new Lang.Class({
 
     update_label: function() {
         let [mouse_x, mouse_y, mask] = global.get_pointer();
-        let newLabel = "X: " + mouse_x + " Y: " + mouse_y;
+        let padded_mouse_x = ("0000" + mouse_x).slice(-4)
+        let padded_mouse_y = ("0000" + mouse_y).slice(-4)
+        let newLabel = "X: " + padded_mouse_x + " Y: " + padded_mouse_y;
         this.label.set_text(newLabel);
 
         return true;
